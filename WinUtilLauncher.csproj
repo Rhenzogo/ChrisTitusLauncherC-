@@ -9,7 +9,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>WinUtilLauncher</AssemblyName>
     <RootNamespace>WinUtilLauncher</RootNamespace>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <AssemblyTitle>WinUtil Launcher</AssemblyTitle>
     <Product>WinUtil Launcher</Product>
     <Version>1.0.0</Version>

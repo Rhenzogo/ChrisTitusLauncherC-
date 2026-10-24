@@ -21,6 +21,7 @@ internal static class Program
         ConfigureConsole();
 
         Console.WriteLine("=== WinUtil Launcher ===");
+        Console.WriteLine("Modo: elevacion bajo demanda (sin manifiesto; el UAC aparece al lanzar PowerShell).");
         Console.WriteLine();
         Console.WriteLine("Se va a ejecutar:");
         Console.WriteLine("  powershell.exe -NoProfile -ExecutionPolicy Bypass -Command \"{0}\"", PowerShellCommand);
@@ -55,6 +56,7 @@ internal static class Program
         catch (Win32Exception ex) when (ex.NativeErrorCode == ErrorCancelled)
         {
             // El usuario pulso "No" en el cartel de UAC.
+            // Sin manifiesto este camino si se ejecuta: la elevacion la pide Process.Start, no el loader.
             WriteError("Permisos rechazados: se cancelo el aviso de UAC.");
             Console.WriteLine("No se ha ejecutado ningun comando. Puede volver a intentarlo cuando lo desee.");
             Pause();

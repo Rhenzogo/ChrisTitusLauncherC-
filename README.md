@@ -11,7 +11,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Invoke-RestMethod ch
 ## Características
 
 - Elevación mediante `ProcessStartInfo` (`Verb = "runas"`, `UseShellExecute = true`).
-- Manifiesto `requireAdministrator`: el UAC aparece al abrir el `.exe`.
+- **Rama experimental:** sin manifiesto, así que el UAC aparece al lanzar PowerShell (no al abrir el `.exe`) y la cancelación se puede capturar. La rama `main` sí usa manifiesto `requireAdministrator`.
 - Manejo limpio de la cancelación de UAC (`Win32Exception` 1223) y de otros errores.
 - Publicación como ejecutable único, autocontenido y portable (win-x64).
 
